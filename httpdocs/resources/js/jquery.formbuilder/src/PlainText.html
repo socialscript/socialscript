@@ -1,0 +1,271 @@
+<!--
+* Plain Text Field design.
+*
+* Revision: @REVISION
+* Version: @VERSION
+* Copyright 2011 Lim Chee Kin (limcheekin@vobject.com)
+*
+* Licensed under Apache v2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+*
+* Date: 17-Jan-2011
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Plain Text design</title>
+<script type="text/javascript" src="../lib/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript"
+	src="../lib/js/jquery-ui-1.8.7.custom.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="js/jquery.fontpicker.js"></script>
+<script type="text/javascript" src="js/jquery.colorpicker.js"></script>
+<link type="text/css"
+	href="../lib/css/smoothness/jquery-ui-1.8.7.custom.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" href="../lib/css/uni-form.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" href="../lib/css/default.uni-form.css"
+	media="screen" rel="stylesheet" />
+<link type="text/css" href="../lib/css/jquery.qtip.css" media="screen"
+	rel="stylesheet" />
+<!--DEV-->
+<link type="text/css" href="css/jquery.formbuilder.core.css"
+	media="screen" rel="stylesheet" />
+<!--DEV-->
+<link type="text/css" href="css/jquery.formbuilder.plaintext.css"
+	media="screen" rel="stylesheet" />
+<link type="text/css" href="css/jquery.fontpicker.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" href="css/jquery.colorpicker.css" media="screen"
+	rel="stylesheet" />
+
+<script type="text/javascript">
+$(function(){
+	$('#tooltip').qtip({
+		content: $('#tooltip').attr('title'),
+	  position: { my: 'bottom left', at: 'top center' },
+		show: {
+			event: 'click',
+			effect: function() { $(this).show('drop', { direction:'up'}); }
+		},		
+		hide: 'mouseout',
+		style: {
+			widget: true,
+			classes: 'ui-tooltip-shadow ui-tooltip-rounded', 
+			tip: true
+		}				
+	});
+	
+	$('#paletteTabs').tabs();
+	$('.fontPicker').fontPicker({ 
+		defaultFont: 'Tahoma',
+		disabled: true
+	});
+	
+	var $backgroundColor = $('#color').colorPicker({
+	    ico:    '../images/jquery.colourPicker.gif', 
+	    title:    "Web Safe Colors",
+	    type: 'webSafe',
+	    name: 'field.color',
+	    width: 360
+	}); 		
+	//$('a', $backgroundColor).removeClass('floatLeft');
+	
+	/* $('#color').colorPicker({
+	    ico:    '../images/jquery.colourPicker.gif', 
+	    disabledIco:    '../images/jquery.colourPicker.disabled.gif', 
+	    name: 'field.color',
+	    disabled: true
+	});	*/
+	var $builderFormFieldset = $('#builderForm fieldset');
+	$builderFormFieldset.sortable({ 
+		/*placeholder: 'ui-state-highlight',*/
+		axis: 'y',
+		cursor: 'move',
+		helper: function (event, ui) {
+			return $(ui).clone().css({
+				opacity: 0.6,
+				border: "3px solid #cccccc"
+			});
+		},
+		start: function (event, ui) {
+			var $previousElement = $(ui.item).prev();
+			if ($previousElement.attr('id')) {
+				ui.item.prevId = $previousElement.attr('id');
+				ui.item.originalPositionTop = $previousElement.position().top;
+				// alert('ui.item.originalPositionTop = ' + ui.item.originalPositionTop);
+			}
+		},
+		update: function (event, ui) {
+			alert('ui.position.top = ' + ui.position.top + ', ui.offset.top = ' + ui.offset.top);
+			var $uiItem = $(ui.item);
+			var $elements;
+			var moveDown = ui.position.top > ui.item.originalPositionTop;
+			if (ui.item.prevId) {
+				if (moveDown) {
+			    $elements = $uiItem.prevUntil('#' + ui.item.prevId);
+				} else {
+					$elements = $uiItem.nextUntil('#' + ui.item.prevId);
+					// process the last one $('#' + ui.item.prevId) 
+				}
+			} else {
+				$elements = $uiItem.prevAll();
+			}
+			$elements.each(function(index) {
+				alert($(this).find('.text').text());
+			});			
+		}	
+	});
+	// Making text elements, or elements that contain text, not text-selectable.
+	$builderFormFieldset.disableSelection();
+});
+
+</script>
+
+<style type="text/css">
+#backgroundColor {
+	width: 9em
+}
+
+.ui-state-highlight {
+	height: 4.3em;
+	line-height: 4em;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>Plain Text design</h1>
+		</div>
+		<div id="builderPalette">
+			<div class="floatingPanelIdentifier"></div>
+			<div class="floatingPanel">
+				<div id="paletteTabs">
+					<ul>
+						<li><a href="#fieldSettings">Field Settings</a></li>
+					</ul>
+					<div id="fieldSettings">
+						<fieldset class="language">
+							<legend>
+								Language: <select><option value="en">English</option></select>
+							</legend>
+							<div class="clear labelOnTop">
+								<label for="text">Text (?)</label><br /> <input type="text"
+									id="text" />
+							</div>
+							<div class="2cols">
+								<div class="labelOnTop col1 noPaddingBottom">
+									<label for="horizontalAlignment">Horizontal Align</label><br />
+									<select id="horizontalAlignment">
+										<option value="leftAlign">left</option>
+										<option value="centerAlign">center</option>
+										<option value="rightAlign">right</option>
+									</select>
+								</div>
+								<div class="labelOnTop col2 noPaddingBottom">
+									<label for="verticalAlignment">Vertical Align</label><br /> <select
+										id="verticalAlignment">
+										<option value="topAlign">top</option>
+										<option value="middleAlign">middle</option>
+										<option value="bottomAlign">bottom</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+						<div class="general">
+							<fieldset>
+								<legend>Fonts</legend>
+								<!-- From: http://stackoverflow.com/questions/2611083/css-equivalent-of-table-rowspan-with-fluid-height -->
+								<div style="display: table">
+									<div style="display: table-cell; width: 48%;">
+										<div>
+											<label for="fontFamily">Font</label><br />
+											<div class="fontPicker"></div>
+											<input type="hidden" id="fontFamily" />
+										</div>
+										<div style="margin-top: 1em; margin-right: 2%">
+											<div>
+												<label for="fontSize">Size</label>&nbsp; <select
+													id="fontSize">
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+													<option value="13">13</option>
+													<option value="14">14</option>
+													<option value="15">15</option>
+													<option value="16">16</option>
+													<option value="17">17</option>
+													<option value="18">18</option>
+													<option value="20">20</option>
+													<option value="22">22</option>
+													<option value="24">24</option>
+													<option value="28">28</option>
+													<option value="32">32</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div
+										style="display: table-cell; vertical-align: middle; width: 48%; margin-left: 2%">
+										<div class="floatClearLeft" style="padding-left: 2em">
+											<span><input type="checkbox" id="bold" value="bold" />&nbsp;Bold</span><br />
+											<span><input type="checkbox" id="italic"
+												value="italic" />&nbsp;Italic</span><br /> <span><input
+												type="checkbox" id="underline" value="underline" />&nbsp;Underline</span>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Colors</legend>
+								<div class="2cols">
+									<div class="labelOnTop col1 noPaddingBottom">
+										<label for="field.color">Text</label><br>
+										<div class="floatClearLeft" id="color"></div>
+									</div>
+									<div class="labelOnTop col2 noPaddingBottom">
+										<!--  <label	for="field.backgroundColor">Background</label>
+<div class="floatLeft" id="backgroundColor"></div> -->
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form id="builderForm" action="#" class="uniForm">
+			<div id="builderPanel">
+				<div class="formHeading">
+					<h1>Form 1</h1>
+				</div>
+				<fieldset>
+					<div id="plainText1" class="ctrlHolder topAlign">
+						<a href="#" class="ui-corner-all closeButton"><span
+							class="ui-icon ui-icon-close">delete this widget</span></a>
+						<div class="PlainText">Panel 1</div>
+					</div>
+					<div id="plainText2" class="ctrlHolder bottomAlign">
+						<a href="#" class="ui-corner-all closeButton"><span
+							class="ui-icon ui-icon-close">delete this widget</span></a>
+						<div class="PlainText">Panel 2</div>
+					</div>
+					<div id="plainText3" class="ctrlHolder middleAlign">
+						<a href="#" class="ui-corner-all closeButton"><span
+							class="ui-icon ui-icon-close">delete this widget</span></a>
+						<div class="PlainText">Panel 3</div>
+					</div>
+				</fieldset>
+
+			</div>
+			<div class="buttons">
+				<input type="submit" name="create" class="save" value="Create"
+					id="create" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>

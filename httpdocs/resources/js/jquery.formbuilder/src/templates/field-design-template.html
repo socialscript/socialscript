@@ -1,0 +1,130 @@
+<!--
+* Field Name design.
+*
+* Revision: @REVISION
+* Version: @VERSION
+* Copyright 2011 Author Name (author@email.com)
+*
+* Licensed under Apache v2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+*
+* Date:  
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Field Name design</title>
+<script type="text/javascript" src="../lib/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript"
+	src="../lib/js/jquery-ui-1.8.7.custom.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery.qtip.min.js"></script>
+<!--DEV-->
+<script type="text/javascript" src="js/jquery.formbuilder.core.js"></script>
+<!--DEV-->
+<script type="text/javascript" src="js/jquery.formbuilder.widget.js"></script>
+<!--DEV-->
+<script type="text/javascript" src="js/jquery.colorpicker.js"></script>
+<!--DEV-->
+<script type="text/javascript" src="js/jquery.fontpicker.js"></script>
+<!--PROD.JS-->
+<link type="text/css"
+	href="../lib/css/smoothness/jquery-ui-1.8.7.custom.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" href="../lib/css/uni-form.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" href="../lib/css/default.uni-form.css"
+	media="screen" rel="stylesheet" />
+<link type="text/css" href="../lib/css/jquery.qtip.css" media="screen"
+	rel="stylesheet" />
+<!--DEV-->
+<link type="text/css" href="css/jquery.formbuilder.core.css"
+	media="screen" rel="stylesheet" />
+<!--DEV-->
+<link type="text/css" href="css/jquery.colorpicker.css" media="screen"
+	rel="stylesheet" />
+<!--DEV-->
+<link type="text/css" href="css/jquery.fontpicker.css" media="screen"
+	rel="stylesheet" />
+<!--PROD.CSS-->
+<script type="text/javascript">
+$(function(){
+	$('#paletteTabs').tabs();
+});
+</script>
+
+<style type="text/css">
+/* Field specific styles here */
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>Field Name design</h1>
+		</div>
+		<div id="builderPalette">
+			<div class="floatingPanel">
+				<div id="paletteTabs">
+					<ul>
+						<li><a href="#fieldSettings">Field Settings</a></li>
+					</ul>
+					<div id="fieldSettings">
+						<fieldset class="language">
+							<legend>Language: English</legend>
+							<div class="clear labelOnTop">
+								<label for="text">Text (?)</label><br /> <input type="text"
+									id="text" />
+							</div>
+							<div class="2cols">
+								<div class="labelOnTop col1 noPaddingBottom">
+									<label for="horizontalAlignment">Horizontal Align (?)</label><br />
+									<select id="horizontalAlignment">
+										<option value="leftAlign">left</option>
+										<option value="centerAlign">center</option>
+										<option value="rightAlign">right</option>
+									</select>
+								</div>
+								<div class="labelOnTop col2 noPaddingBottom">
+									<label for="verticalAlignment">Vertical Align (?)</label><br />
+									<select id="verticalAlignment">
+										<option value="topAlign">top</option>
+										<option value="middleAlign">middle</option>
+										<option value="bottomAlign">bottom</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+						<div class="general">
+							<div class="2cols">
+								<div class="labelOnTop col1 noPaddingBottom">
+									<label for="name">Name (?)</label><br /> <input type="text"
+										id="name" />
+								</div>
+								<div class="labelOnTop col2">
+									<label for="backgroundColor">Background Color (?)</label><br />
+									<select id="backgroundColor">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form id="builderForm" action="#" class="uniForm">
+			<div id="builderPanel">
+				<div class="formHeading">
+					<h1>Form 1</h1>
+				</div>
+				<fieldset>
+					<div class="ctrlHolder"></div>
+				</fieldset>
+			</div>
+			<div class="buttons">
+				<input type="submit" name="create" class="save" value="Create"
+					id="create" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>

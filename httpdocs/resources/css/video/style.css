@@ -1,0 +1,539 @@
+@CHARSET "UTF-8";
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+html
+			{
+				/*overflow: auto;*/
+				/*overflow-y: scroll;*/
+			}
+			#full-page-container
+			{
+					width:100%;
+				/*overflow: auto;*/
+			}
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px #FFCC00;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    -webkit-box-shadow: inset 0 0 10px #FFCC00;
+}
+*/
+body {
+	/*
+	scrollbar-face-color: #000000;
+scrollbar-shadow-color: #2D2C4D;
+scrollbar-highlight-color:#7D7E94;
+scrollbar-3dlight-color: #7D7E94;
+scrollbar-darkshadow-color: #2D2C4D;
+scrollbar-track-color: #7D7E94;
+scrollbar-arrow-color: #C1C1D1
+*/
+	width:100%;
+	font: 62.5% "Trebuchet MS", sans-serif;
+	/*max-height:100%;*/
+}
+a { cursor:pointer;}
+.box_header {
+	margin-top: 2em;
+}
+#top { position:fixed;top:0;left:0;right:0;margin:0;padding:0;width:100%;height:50px;z-index:2;}
+#content { margin-top:80px;margin-left:0;margin-right:0;width:100%;}
+.left_boxes { width:23%;}
+.right_boxes { width:23%;}
+#middle { width:75%;min-height:500px;min-width:75%;}
+#middle_top { width:48%; min-height:480px;min-width:45%;}
+#right_top { width:25%;max-height:500px;overflow-y:scroll}
+#left_sections_top { width:25%;height:500px;}
+#view_top { margin-top:20px;}
+#middle_boxes  { width:100%;margin-top:20px;height:250px;}
+#middle_blogs  { width:100%;margin-top:20px;height:250px;}
+#middle_events  { width:100%;margin-top:20px;height:250px;}
+#middle_music  { width:100%;margin-top:20px;height:250px;}
+#middle_videos  { width:100%;margin-top:20px;height:250px;}
+#middle_groups  { width:100%;margin-top:20px;height:250px;}
+#middle_music { width:100%;margin-top:20px;height:250px;}
+#left_my_account {margin-top:-10px; }
+#friends  { width:100%;margin-top:20px;}
+#best_friends  { width:100%;margin-top:20px;}
+#family_friends  { width:100%;margin-top:20px;}
+#gossip  { width:100%;margin-top:20px;}
+#business  { width:100%;margin-top:20px;}
+#cars  { width:100%;margin-top:20px;}
+#fashion  { width:100%;margin-top:20px;}
+#finance  { width:100%;margin-top:20px;}
+#foods  { width:100%;margin-top:20px;}
+#show_groups  { width:100%;margin-top:20px;}
+#movies  { width:100%;margin-top:20px;}
+#music  { width:100%;margin-top:20px;}
+#news  { width:100%;margin-top:20px;}
+#sports  { width:100%;margin-top:20px;}
+#technology  { width:100%;margin-top:20px;}
+#travel  { width:100%;margin-top:20px;}
+#whatshot  { width:100%;margin-top:20px;}
+#messages  { width:100%;margin-top:20px;}
+#profile  { width:100%;margin-top:20px;}
+#show_music_files  { width:100%;margin-top:20px;}
+#player_box  { width:100%;margin-top:20px;min-height:550px;}
+#show_videos  { width:100%;margin-top:20px;}
+.middle_small { width:200px;}
+#dialog_link {
+	padding: .4em 1em .4em 20px;
+	text-decoration: none;
+	position: relative;
+}
+
+#dialog_link span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+}
+
+ul#icons {
+	margin: 0;
+	padding: 0;
+}
+
+ul#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+	cursor: pointer;
+	float: left;
+	list-style: none;
+}
+
+ul#icons span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
+
+.register label {
+	float: left;
+	width: 100px;
+	text-align: justify;
+	vertical-align: text-bottom;
+padding-top:5px;
+}
+.register_form_separator { clear:both;height:5px;}
+.input {
+	width: 300 px;
+	height: 20px;
+	margin: 2px;
+}
+
+.select {
+	padding: 5px;
+	font-size: 16px;
+	height: 25px;
+}
+
+
+.select_dob {
+	width:50px;
+}
+
+.hidden {
+	display: none;
+}
+
+.clear { clear:both;}
+#login_response {
+	float:left;
+	color: red;
+	margin-left: 50px;
+	font-weight: bold;
+}
+
+#login_response_2 {
+	width:200px;
+	color: red;
+	margin-left: 50px;
+	font-weight: bold;
+float:left;
+}
+.floatleft { float:left;}
+.floatright { float:right;}
+#notifications { float:left;color:red;font-weight:bold;font-size:14px;text-align:justify;margin-left:2px;}
+#wn { width:25px;height:25px;}
+.wn { background-image: url('../images/wn.jpg');width:15px;height:15px;}
+#loading {background-color:#000000; width:100%; height:20px;top:0%;left:0%;position:fixed;z-index:10000000;}
+
+#socializethis{
+  background:#CCC;
+  border:solid 1px #666;
+  border-width: 1px 0 0 1px;
+  height:15px;
+  width:260px;
+  position:fixed;
+  bottom:0;
+  right:0;
+  padding:2px 5px;
+  overflow:hidden;
+  /* CSS3 */
+  -webkit-border-top-left-radius: 12px;
+  -moz-border-radius-topleft: 12px;
+  border-top-left-radius: 12px;
+  -moz-box-shadow: -3px -3px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: -3px -3px 3px rgba(0,0,0,0.5);
+  box-shadow: -3px -3px 3px rgba(0,0,0,0.5);
+  }
+
+#socializethis a{
+	float:left;
+  width:32px;
+  margin:3px 2px 2px 2px;
+  padding:0;
+}
+
+#socializethis span{
+  float:left;
+  margin:2px 3px;
+  text-shadow: 1px 1px 1px #FFF;
+  color:#444;
+  font-size:12px;
+}
+
+  .submenu ul { width:100%;}
+ .submenu li {
+text-align:center;
+list-style: none;
+display: block;
+height:20px;
+float: left;
+width: 6.5%; }
+
+.sub_submenu ul { width:100%;}
+ .sub_submenu li {
+text-align:center;
+list-style: none;
+display: block;
+height:20px;
+float: left;
+width: 7.8%; }
+
+
+.separator { width:10px;float:left;}
+.separator_vertical { height:20px;}
+#theme_selector { float:right;width:80px;height:20px;margin:0;padding:0;}
+#right_bottom_box { width:100%;}
+#chat { width:100%;margin-top:20px;}
+.chat_from { float:left;font-weight:bold;padding-right:2px;}
+.chat_message { float:left;}
+.chat_message_separator { clear:both;height:10px;}
+#chat_general
+{
+	width: 100%;
+	height: 270px;
+	overflow: auto;
+}
+
+.conversation_chat_room { width: 100%;
+min-height: 230px;
+	max-height: 230px;
+	overflow: auto;}
+.chat_friend { width: 100%;
+min-height: 250px;
+	max-height: 250px;
+	overflow: auto; }
+#chat-2 { height: auto;
+	max-height: 270px;min-height:270px;}
+#chat-3 { min-height:270px;}
+#chat_friends_messages { float:left;width:220px; min-height:260px}
+#chat_friends {float:left;width:0px;padding-left:2px;}
+.chat_friend { width: 100%;
+	height: 255px;
+max-height:255px;
+	overflow: auto;}
+.chat_friend_messages { 	height: 270px;
+max-height:270px;}
+#chat_rooms_messages { float:left;width:200px; padding-right:2px;min-height: 200px;
+	overflow: auto;}
+#chat_rooms {float:left;padding-left:2px;}
+.chat_input { width:180px;}
+.chat_vertical_separator { width:5px;min-height:282px;float:left;}
+.profile_pic  { float:left;margin:2px;}
+.profile_box_pic { float:left;width:20%;}
+.video_thumb_pic {  }
+.user_profile_box_right { }
+.video_box_right {  }
+.profile_data{ margin:2px;}
+.profile_i { float:left;margin:2px;}
+.profile_separator {width:10px; height:10px;float:left;}
+
+#right-1 { min-height:150px;}
+#right-2 { min-height:150px;}
+#right-3 { min-height:150px;}
+.ask_question{ z-index:2;position:absolute;width:80%;padding:6px;}
+.ask_question_textarea { width:430px;height:50px;}
+.ask_question_textarea_small { width:300px;height:50px;}
+.box_separator { height:10px;}
+	.upload_profile {
+			height: 29px;
+			width: 133px;
+			background: url(../images/button.png) 0 0;
+
+			font-size: 14px; color: #C7D92C; text-align: center; padding-top: 15px;
+		}
+
+		.upload_profile.hover {
+			background: url(../images/button.png) 0 56px;
+			color: #95A226;
+		}
+#add_pictures { width:600px;height:300px;min-height:300px;}
+.dialog_big { width:2000px;}
+#galleries_left { float:left;width:30%;}
+		#pictures_comments { width:45%;float:left;}
+		#big_picture_gallery { width:52%;float:left;}
+		#galleries_right { float:left;margin-left:10px;min-width:68%;}
+
+#blogs_comments { width:45%;float:left;margin-right:10px;}
+		#blog { width:52%;float:left;}
+#blogs_right { float:left;margin-left:10px;min-width:68%;}`
+
+#events_comments { width:45%;float:left;margin-right:10px;}
+		#event { width:52%;float:left;}
+#events_right { float:left;margin-left:10px;min-width:68%;}
+
+		.profile_image {}
+		.gallery_image { border:2px solid #FFFFFF;}
+		.large_image { margin:5px;}
+
+		.message_textarea{ width:300px;height:300px;}
+		#messages { width:100%;}
+		.message { min-height:30px;margin-top:5px;}
+		.message_horizontal_separator { margin-left:10px;}
+		.profile_box { width:200px;float:left;min-height:100px;margin-top:5px;}
+		.group { width:152px;margin:2px;height:100px;float:left;}
+
+		.group_details_left { float:left;width:18%;margin-right:10px;min-height:550px;}
+		.group_details_right { float:left;width:80%;min-height:450px;height:550px;}
+.thenews { margin:2px;width:90%;}
+.theextra_sections { width:152px;float:left;margin:5px;text-align:left;height:105px;}
+#latest_fashion { width:100%;}
+#footer  {top:98%;left:0%;right:0%;width:100;position:fixed;min-height:20px;text-align:center;}
+
+		.profile_fields_left { float:left;width:200px;text-align:justify;}
+.profile_fields_right { float:left;width:200px;text-align:justify;}
+
+#profile_page { width:100%;}
+.left_profile_page { width:50%;float:left;min-height:500px;}
+.right_profile_page { width:48%;float:left;margin-left:15px;}
+.right_profile_separator { height:10px;}
+.extra_fields_profile_page { min-height:400px;}
+#profile_page_pictures_comments { float:left;width:200px;}
+#picture_profile_page{float:left;min-width:300px;}
+#groups_comments { float:left;width:200px;}
+#groups_profile_page{float:left;min-width:300px;}
+#blogs_profile_page{float:left;min-width:300px;}
+#events_profile_page{float:left;min-width:300px;}
+#show_people_by_country { margin-top:20px;}
+.people_by_country_left { float:left;width:200px;margin:2px;}
+#show_photos { margin-top:20px;}
+.photos_left { width:152px;float:left;margin:5px;text-align:left;height:195px;}
+.events_left { width:152px;float:left;margin:5px;text-align:left;height:195px;}
+.blogs_left { width:152px;float:left;margin:5px;text-align:left;height:195px;}
+#show_events { margin-top:20px;}
+.events_left { width:150px;float:left;margin:2px;}
+#show_blogs { margin-top:20px;}
+.blogs_info { padding:2px;text-align:right;}
+.events_info { padding:2px;text-align:right;}
+.trade_info  { padding:2px;text-align:right;}
+#show_online_people{margin-top:20px;}
+#show_top_rated_people{margin-top:20px;}
+#show_statuses{margin-top:20px;}
+#show_all_users{margin-top:20px;}
+		#latest_trade { width:100%;}
+		.thevideo { margin:4px;min-height:100px;width:152px;float:left;}
+.themusic { margin:4px;width:152px;height:150px;float:left }
+#show_trade{margin-top:20px;width:100%;}
+.thetrade { width:152px;float:left;margin:5px;text-align:left;height:195px;}
+#music_comments { min-height:350px;}
+#video_comments { min-height:350px;}
+#video_details_comments { min-height:300px;}
+#music_details_comments { min-height:300px;}
+#extra_sections { min-height:500px;display:block;margin-top:20px;}
+		.extra_sections_content { min-height:500px;}
+		#add_new_extra_sections { float:right;}
+		#middle_home {margin-top:20px;}
+.status_textarea { width:180px;height:30px;margin-top:20px;}
+		#my_account { width:100%;min-height:100px;}
+		#left_bottom_box { height:100px;}
+		/*
+.ui-accordion-content-active {
+			position:relative;
+			width: 82.5%;
+	height: 270px;
+	overflow: auto; }
+		*/
+		.login { min-height:30px;}
+		.message { margin:4px;}
+#middle_matches{height:100px;}
+		#show_matches { margin-top:20px;width:100%;height:200px;}
+#details_left { min-height:500px;max-height:500px;margin-top:20px;}
+#left_details { min-height:500px;max-height:500px;margin-top:20px;}
+		#details_right { margin-top:20px;width:100%;min-height:480px;max-height:480px;}
+#comments_list_details { min-height:205px;max-height:205px;overflow-y:auto;overflow-x:hidden;}
+.blog_title { width:700px;}
+		.blog_textarea { width: 800px; height: 600px;}
+.event_title { width:700px;}
+		.event_textarea { width: 800px; height: 600px;}
+.event_date { width:100px;}
+		.event_location { width: 300px;}
+		#blogs_details_right { margin-top:20px;width:100%;}
+#add_new_trade { float:right;}
+#show_search { margin-top:20px;width:100%;}
+		.group_name { width:600px;}
+		.group_description { width:800px;height:300px;}
+		.group_location { width:300px;}
+		#age_min { width:30px;}
+		#age_max { width:30px;}
+.error { color:red;font-weight:bold;}
+		.input_text_big { width:379px;}
+		.picture_details_picture { width:70%;}
+		.picture_details_text{ width:15%;}
+textarea {
+    resize: none;
+}
+#text_page { margin-top:20px}
+.comments_textarea { width:250px;height:20px;}
+.comment_text {width:100%;min-height:30px;margin:2px;}
+.comment_info { padding:2px;text-align:right;}
+#tabs_group_details { min-height:550px;}
+.group_left { width:18%;}
+.group_middle { width:30%;margin:10px;}
+.group_right { width:50%;}
+#group_details_right_inner { width:100%;min-height:500px; }
+#group_details_left_inner {margin-left:10px; width:110%;min-height:550px;max-height:550px;margin-top:-10px;}
+
+#group_blogs_comments {width:100%; min-height:310px;}
+#comments_group_details { min-height:200px;max-height:200px;overflow-y:scroll;overflow-x:hidden;}
+#view_groups { width:100%;min-height:450px;margin-top:20px;}
+#groups_comments { width:90%;}
+.group_blogs_blog {margin:2px;width:100%}
+#group_details_events_right_inner { width:100%;min-height:500px; }
+#group_details_events_left_inner {margin-left:10px; width:110%;min-height:550px;max-height:550px;margin-top:-10px;}
+
+#group_events_comments {width:100%; min-height:310px;}
+#comments_group_event_details {min-height:200px;max-height:200px;overflow-y:scroll;overflow-x:hidden;}
+#groups_events_comments { width:90%;}
+.group_events_event {margin:2px;width:100%}
+#group_details_pictures_right_inner { width:100%;min-height:500px; }
+#group_details_pictures_left_inner {margin-left:10px; width:110%;min-height:550px;max-height:550px;margin-top:-10px;}
+
+#group_pictures_comments {width:100%; min-height:310px;}
+#comments_group_picture_details {min-height:300px;max-height:300px;overflow-y:scroll;overflow-x:hidden;}
+#groups_pictures_comments { width:90%;}
+
+#group_details_videos_right_inner { width:100%;min-height:500px; }
+#group_details_videos_left_inner {margin-left:10px; width:110%;min-height:550px;max-height:550px;margin-top:-10px;}
+
+#group_videos_comments {width:100%; min-height:310px;}
+#comments_group_video_details {min-height:200px;max-height:200px;overflow-y:scroll;overflow-x:hidden;}
+#group_videos_comments { width:90%;}
+
+.group_videos_video {margin:2px;width:100%}
+
+#group_details_musics_right_inner { width:100%;min-height:500px;margin-top:-30px; }
+#group_details_musics_left_inner {margin-left:10px; width:110%;min-height:550px;max-height:550px;margin-top:-10px;}
+
+#group_musics_comments {width:100%; min-height:310px;}
+#comments_group_music_details {min-height:200px;max-height:200px;overflow-y:scroll;overflow-x:hidden;}
+#group_musics_comments { width:90%;}
+
+.group_musics_music{ margin:2px;width:100%;}
+.profile_manage_links { font-size:14px;}
+.middle_min_height { min-height:250px;}
+.my_account_min_height { min-height:120px;}
+.middle_home_min_height { min-height:250px;}
+.comments_textarea_big { min-width:600px;}
+.comments_no_ajax_top { margin-top:30px;}
+#webcam {margin-top:100px;overflow:hidden;margin-bottom:-55px;}
+#tabs-1 { min-height:25px;}
+
+
+#new-header {
+	width:100%;
+	height:80px;
+	margin:0;
+	padding:0;
+}
+#new-top-bar {
+	 background: url(../../images/first-bar.png) repeat-x; 
+	 height: 21px; 
+	 color: #fff; 
+	 font-weight: bold; 
+}
+#new-top-bar a {
+	 display:block;
+	 width: 6.66%;
+	 float:left;
+	 line-height:14px;
+	 color:#eee;
+	 text-align:center;
+	 font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; 
+	 font-size: 10px;
+	 text-decoration:none;
+	 padding-top:2px;
+	 padding-bottom:3px;
+}
+#new-top-bar a:hover {
+	 display:block;
+	 width: 6.66%;
+	 font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; 
+	 font-size: 10px;
+	 text-decoration:none;
+	 float:left;
+	 color:eee;
+	 line-height:14px;
+	 padding-top:2px;
+	 padding-bottom:3px;
+	 text-align:center;
+	 background-color:#000;
+}
+#new-tall-bar a {
+	 display:block;
+	 width: 5.88%;
+	 height:52px;
+	 padding-top:4px;
+	 float:left;
+	 line-height:14px;
+	 color:#eee;
+	 text-align:center;
+	 font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; 
+	 font-size: 10px;
+	 text-decoration:none;
+}
+#new-tall-bar a:hover {
+	 display:block;
+	 width: 5.88%;
+	 font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; 
+	 font-size: 10px;
+	 text-decoration:none;
+	 float:left;
+	 height:52px;
+	 padding-top:4px;
+	 color:eee;
+	 line-height:14px;
+	 text-align:center;
+	 background-color:#000;
+}
+#new-tall-bar {
+	 background: url(../../images/second-bar.png) repeat-x; 
+	 height: 60px; 
+	 color: #fff; 
+	 font-weight: bold; 
+}

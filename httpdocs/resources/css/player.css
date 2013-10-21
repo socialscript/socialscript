@@ -1,0 +1,69 @@
+
+
+
+#left_player
+{
+	color: #333;
+	border: 1px solid #ccc;
+	background-color: #F2F2E6;
+	height: 368px;
+	width: 76%;
+	float: left;
+}
+
+#description_player
+{
+	color: #333;
+	border: 1px solid #ccc;
+	background-color: #F2F2E6;
+	margin: 10px 5px 10px 0px;
+	padding: 10px;
+	height: 100%;
+	width: 98%;
+	float: left;
+}
+
+#right_player
+{
+	display: inline;
+	position: relative;
+	float: right;
+	color: #666;
+	border: 1px solid #ccc;
+	background-color: #F2F2E6;
+	height: 368px;
+	width: 23%;
+}
+
+#playlist
+{
+	list-style: none;
+	height: 348px;
+	overflow: auto;
+	position: relative;
+	background-color: #F2F2E6;
+	margin: 0.3em auto;
+	font-size: 12px;
+}
+
+#playlist li
+{
+	font-size: 12px;
+	width: 120px;
+	background-color: #333;
+	color: #CCC;
+	padding: 5px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+#playlist a
+{
+	text-decoration: none;
+}
+
+#playlist a:hover li
+{
+	background-color: #6F7986;
+	color: #FFF;
+}

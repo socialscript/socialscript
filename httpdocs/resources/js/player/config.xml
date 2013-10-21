@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videos width="600" height="300">
+	<item>
+		<title>test</title>
+		<mp4>http://localhost/community/community/public/test.mp4</mp4>
+		<ogg>http://localhost/community/community/public/test.ogv</ogg>
+		<webm>http://localhost/community/community/public/test.webm</webm>
+		<description><![CDATA[<strong>description</strong> ]]></description>
+	</item>
+
+
+	<item>
+		<title>Heir Apparent Largo Winch</title>
+		<mp4>http://css.flepstudio.org/demo/video_player/assets/videos/Heir_Apparent_Largo_Winch.mp4</mp4>
+		<ogg>http://css.flepstudio.org/demo/video_player/assets/videos/Heir_Apparent_Largo_Winch.ogv</ogg>
+		<description><![CDATA[<strong>Heir Apparent Largo Winch</strong>]]></description>
+	</item>
+</videos>

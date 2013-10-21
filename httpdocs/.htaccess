@@ -1,0 +1,43 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^home$  index.php?route=index
+RewriteRule ^info/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=index&action=text_page&page=$1&id=$2
+RewriteRule ^peopletalk/([a-zA-Z]+)$  index.php?route=users_interaction&action=show_extra_sections&type=$1
+RewriteRule ^peopletalk/([a-zA-Z]+)/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_interaction&action=extra_section_details&type=$1&title=$2&id=$3
+RewriteRule ^groups$  index.php?route=users_interaction&action=show_groups
+RewriteRule ^all_users$  index.php?route=users&action=show_all_users
+RewriteRule ^search$  index.php?route=users&action=show_search
+RewriteRule ^users_by_country$  index.php?route=users&action=show_people_by_country
+RewriteRule ^online_users$  index.php?route=users&action=show_online_people
+RewriteRule ^top_rated_users$  index.php?route=users&action=show_top_rated_people
+RewriteRule ^photos$  index.php?route=users_content&action=show_photos
+RewriteRule ^videos$  index.php?route=users_interaction&action=show_videos
+RewriteRule ^music$  index.php?route=users_interaction&action=show_music_files
+RewriteRule ^events$  index.php?route=users_content&action=show_events
+RewriteRule ^blogs$  index.php?route=users_content&action=show_blogs
+RewriteRule ^trade$  index.php?route=users&action=show_trade
+RewriteRule ^statuses$  index.php?route=users&action=show_statuses
+RewriteRule ^register$  index.php?route=users&action=register_form
+RewriteRule ^flash_games$  index.php?route=users_content&action=show_games
+RewriteRule ^profile/([a-zA-Z0-9]+)$  index.php?route=users&action=view_profile&username=$1
+RewriteRule ^group/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_interaction&action=group_details&group=$1&id=$2
+RewriteRule ^blog/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_content&action=view_blog&blog=$1&id=$2
+RewriteRule ^event/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_content&action=view_event&event=$1&id=$2
+RewriteRule ^trade/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users&action=get_trade&trade=$1&trade_id=$2
+RewriteRule ^music/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_interaction&action=music_details&music=$1&id=$2
+RewriteRule ^video/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_interaction&action=video_details&video=$1&id=$2
+RewriteRule ^photo/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_interaction&action=picture_details&photo=$1&id=$2
+RewriteRule ^users_in/([a-zA-Z0-9\-_]+)/([a-zA-Z0-9\-_]+)$  index.php?route=users&action=people_by_country&c=$1&country=$2
+RewriteRule ^flash_game/([a-zA-Z0-9\-_]+)/([0-9]+)$  index.php?route=users_content&action=view_game&game=$1&id=$2
+
+
+AddType audio/ogg oga ogg
+AddType video/ogg ogv
+AddType video/webm webm
+AddType video/mp4 mp4
+AddType audio/mp3 mp3
+
+
+ErrorDocument 404 /index.php

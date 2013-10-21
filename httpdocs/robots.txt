@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /data
+Disallow: /resources
+Disallow: image.php
+Disallow: index_admin.php
+Disallow: info.php
