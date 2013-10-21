@@ -1,7 +1,7 @@
 socialscript
 ============
 
-Social community script
+Social network script
 
 Version 2.0
 
