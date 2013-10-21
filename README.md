@@ -11,7 +11,7 @@ Copyright
 ---------
 
 Copyright (C) 2012-2013
-    Paul Trombitas <immortalzn2_at_gmail.com>
+    Paul T <immortalzn2_at_gmail.com>
 
 License
 -------
