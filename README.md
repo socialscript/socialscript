@@ -44,7 +44,7 @@ Requirements
 Download
 --------
 
-You can get the newest version at https://github.com/immortalzn/socialscript
+You can get the newest version at https://github.com/socialscript/socialscript
 
 
 Installation
